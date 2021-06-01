@@ -15,8 +15,7 @@
   - [Basic Commands](#basic-commands)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git add](#-git-add)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; git init](#-git-init)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; git push](#-git-push)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git log](#-git-log)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
   - [Some UseCase Guides](#some-usecase-guides)
     - [&nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository](#-creating-a-local-repository)
@@ -103,6 +102,7 @@
 ## Setting Up the Environment
 ### &nbsp;&nbsp;&nbsp;&nbsp; 1. Install Git
    - Go to <a href="https://git-scm.com/downloads">Git Downloads Page</a>
+   - Install compatible version
 
 <br>
 
