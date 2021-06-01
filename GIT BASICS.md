@@ -115,6 +115,9 @@
       git add file1 file2 file3
      ```
         - add specific files to staging area
+      git add filename
+     ```
+        - add a single file to the staging area
 
 <br>
 <br>
@@ -135,6 +138,9 @@
    git commit -m "commit message"
    ```
    - create a snapshot of the project for uploading via git push
+   git init
+   ```
+   - initialize a repository
 
 <br>
 <br>
