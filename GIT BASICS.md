@@ -300,35 +300,36 @@
 <br>
 
 ###  &nbsp;&nbsp; b.) Getting the latest updates from the repository
-   - b.1.1 to straight up get all the changes from the remote repo
-      ```
-         git pull origin branch-name
-      ```
-   - b.1.2 to check/compare first, the changes since last pull/commit/update, before executing git pull
-      ```
-         git fetch origin branch-name
-         git diff branch-name
-         #after checking, and everythings seems fine, execute pull
-         git pull origin branch-name
-      ```
-   - b.2 after a merge commit
-      - update main branch in local repository
-         ```
-            git pull origin main
-         ```
-      - update other branches that participated in merge commit
+   - b.1) just getting the updates
+      - b.1.1) to straight up get all the changes from the remote repo
          ```
             git pull origin branch-name
          ```
-      - checkout to the other branch
+      - b.1.2) to check/compare first, the changes since last pull/commit/update, before executing git pull
+         ```
+            git fetch origin branch-name
+            git diff branch-name
+            #after checking, and everythings seems fine, execute pull
+            git pull origin branch-name
+         ```
+   - b.2) updating local repo after a merge commit
+      - b.2.1) update main branch in local repository
+         ```
+            git pull origin main
+         ```
+      - b.2.2) update the other branche that participated in merge commit
+         ```
+            git pull origin branch-name
+         ```
+      - b.2.3) checkout / switch to the other branch
          ```
             git checkout branch-name
          ```
-      - merge with main
+      - b.2.4) merge the other branch with main
          ```
             git merge main
          ```
-      - push to remote repo
+      - b.2.5) push to remote repo
          ```
             git push origin branch-name
          ```
