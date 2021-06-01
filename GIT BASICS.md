@@ -10,12 +10,19 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp; Staging Area <a href="https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh">source</a>](#-staging-area-source)
     - [&nbsp;&nbsp;&nbsp;&nbsp; Version Control](#-version-control)
   - [Setting Up the Environment](#setting-up-the-environment)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; 1. Install Git](#-1-install-git)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; 2. Setup your username and email](#-2-setup-your-username-and-email)
   - [Basic Commands](#basic-commands)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git add](#-git-add)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git init](#-git-init)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git push](#-git-push)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
+  - [Some UseCase Guides](#some-usecase-guides)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository](#-creating-a-local-repository)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github](#-1-create-a-new-repository-on-github)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo](#-2-choose-a-directory-for-your-repo)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash](#-3-open-git-bash)
 
 <br>
 <br>
@@ -94,8 +101,28 @@
 <br>
 
 ## Setting Up the Environment
+### &nbsp;&nbsp;&nbsp;&nbsp; 1. Install Git
+   - Go to <a href="https://git-scm.com/downloads">Git Downloads Page</a>
 
-   
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; 2. Setup your username and email
+   - On any directory, right click and select "Git Bash Here"
+   - Input the following commands: 
+      ```git
+         git config --global user.name your-username-here
+      ```
+      - to enter your username
+      ```git
+         git config --global user.name your-email-here
+      ```
+      - to enter your email
+      - to check if the configuration was properly set up: 
+         ```git
+            git config --list
+         ```
+        - then  look  for  user .name  and  user .email
+
 
 <br>
 <br>
@@ -104,6 +131,7 @@
 <br>
 <br>
 <br>
+
 
 ## Basic Commands
 ### &nbsp;&nbsp;&nbsp;&nbsp; git add
@@ -158,29 +186,39 @@
 <br>
 <br>
 
-### &nbsp;&nbsp;&nbsp;&nbsp; git status
- - ```git
-   git status
-   ```
-   - check which files have been changed / are new
-
-<br>
-<br>
-
-### &nbsp;&nbsp;&nbsp;&nbsp; git status
- - ```git
-   git status
-   ```
-   - check which files have been changed / are new
-
-<br>
-<br>
-
 ### &nbsp;&nbsp;&nbsp;&nbsp; git push
  - ```git
+   git push
+   ```
+   - check which files have been changed / are new
+
+<br>
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; git status
+ - ```git
    git status
    ```
    - check which files have been changed / are new
 
 <br>
 <br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; git status
+ - ```git
+   git status
+   ```
+   - check which files have been changed / are new
+
+<br>
+<br>
+
+
+## Some UseCase Guides
+### &nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github
+   - <img src="https://docs.github.com/assets/images/help/repository/repo-create.png">
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash
+
+
