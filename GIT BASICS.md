@@ -17,13 +17,11 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git log](#-git-log)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
-  - [Some UseCase Guides](#some-usecase-guides)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository](#-creating-a-local-repository)
-    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github](#-1-create-a-new-repository-on-github)
-    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo](#-2-choose-a-directory-for-your-repo)
-    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash](#-3-open-git-bash)
-    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Initialize the directory as a git repository](#-4-initialize-the-directory-as-a-git-repository)
-    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area](#-5-add-files-inside-the-directory-to-the-staging-area)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files that have been staged in the local repository](#-6-commit-the-files-that-have-been-staged-in-the-local-repository)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.](#-7-copy-the-remote-repository-url)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL](#-8-in-the-git-bash-add-the-remote-repository-url)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.](#-9-push-the-changes-to-your-reposirtory)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; Getting the latest updates from the repository](#-getting-the-latest-updates-from-the-repository)
 
 <br>
 <br>
@@ -195,6 +193,20 @@
 <br>
 <br>
 
+
+### &nbsp;&nbsp;&nbsp;&nbsp; git remote
+ - ```git
+   git remote add repo-name https://repository.remote.urlHere
+   ```
+   - sets a new remote url that you can use
+ - ```
+      git remote -v 
+   ```
+   - verifies the remote url 
+
+<br>
+<br>
+
 ### &nbsp;&nbsp;&nbsp;&nbsp; git push
  - ```git
    git push
@@ -204,14 +216,6 @@
 <br>
 <br>
 
-### &nbsp;&nbsp;&nbsp;&nbsp; git status
- - ```git
-   git status
-   ```
-   - check which files have been changed / are new
-
-<br>
-<br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git status
  - ```git
@@ -224,6 +228,8 @@
 
 
 ## Some UseCase Guides
+<br>
+
 ### &nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github
    - <img src="https://docs.github.com/assets/images/help/repository/repo-create.png">
@@ -266,5 +272,18 @@
       #pushes the commits to the remote repository in the branch named 'main'
    ```
 
+<br>
+<br>
 
-
+### &nbsp;&nbsp;&nbsp;&nbsp; Getting the latest updates from the repository
+ - to straight up get all the changes from the remote repo
+   ```
+      git pull origin branch-name
+   ```
+ - to check/compare first, the changes since last pull/commit/update, before executing git pull
+   ```
+      git fetch origin branch-name
+      git diff branch-name
+      #after checking, and everythings seems fine, execute pull
+      git pull origin branch-name
+   ```
