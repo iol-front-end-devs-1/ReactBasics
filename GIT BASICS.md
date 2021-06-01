@@ -122,6 +122,7 @@
             git config --list
          ```
         - then  look  for  user .name  and  user .email
+        - asdfasdfasdf
 
 
 <br>
