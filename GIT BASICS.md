@@ -14,8 +14,14 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp; 2. Setup your username and email](#-2-setup-your-username-and-email)
   - [Basic Commands](#basic-commands)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git add](#-git-add)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git checkout](#-git-checkout)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git commit](#-git-commit)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git init](#-git-init)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git log](#-git-log)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git remote](#-git-remote)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git push](#-git-push)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git stash](#-git-stash)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
   - [Some UseCase Guides](#some-usecase-guides)
     - [&nbsp;&nbsp; a.) Creating a local repository](#-a-creating-a-local-repository)
@@ -29,6 +35,7 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL](#-8-in-the-git-bash-add-the-remote-repository-url)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.](#-9-push-the-changes-to-your-reposirtory)
     - [&nbsp;&nbsp; b.) Getting the latest updates from the repository](#-b-getting-the-latest-updates-from-the-repository)
+    - [&nbsp;&nbsp; c.) Removing files](#-c-removing-files)
 
 <br>
 <br>
@@ -145,91 +152,110 @@
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git add
    - ```
+      #add all changed/new files to staging area: 
       git add .
-     ```
-     - add all changed/new files to staging area
-   - ```
+
+
+
+      #add a single file to staging area: 
       git add file1 file2 file3
      ```
-        - add specific files to staging area
-      git add filename
+
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; git checkout
+   - ```
+      #switch to another branch: 
+      git checkout branch-name
+
+
+
+      #create a new branch then switch to said branch: 
+      git checkout -b branch-name
      ```
-        - add a single file to the staging area
 
 <br>
-<br>
-
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git clone
 
-- ```git
-   git clone https://repository.url
-   ```
-    - copy a repository into your chosen directory
-
-<br>
+  - ```git
+      #copy a repository into your chosen directory:
+      git clone https://repository.url
+    ```
 <br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git commit
- - ```git
-   git commit -m "commit message"
-   ```
-   - create a snapshot of the project for uploading via git push
-   git init
-   ```
-   - initialize a repository
+   - ```git
+     #create a snapshot of the project (for uploading via "git push"):
+     git commit -m "commit message"
+     ```
 
-<br>
 <br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git init
- - ```git
-   git init
-   ```
-   - initialize a repository
+  - ```git
+      # initialize a repository
+      git init
+    ```
 
-<br>
 <br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git log
- - ```git
-   git log
-   ```
-   - print out all the commits up to the latest
-   - to exit after executing the command, press q
+   - ```git
+      #print out all the commits up to the latest:
+      git log
+
+      #after executing the command, you will be unable to type, to fix: press q
+     ```
 
 <br>
-<br>
-
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git remote
- - ```git
-   git remote add repo-name https://repository.remote.urlHere
-   ```
-   - sets a new remote url that you can use
- - ```
-      git remote -v 
-   ```
-   - verifies the remote url 
+  - ```git
+      #sets a new remote url that you can use: 
+      git remote add repo-name https://repository.remote.urlHere
 
-<br>
+
+      #verifies the remote url: 
+      git remote -v 
+    ```
+
 <br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git push
- - ```git
-   git push
-   ```
-   - check which files have been changed / are new
+  - ```git
+      #upload the changes remote repository:
+      git push origin main
+    ```
 
 <br>
-<br>
 
+### &nbsp;&nbsp;&nbsp;&nbsp; git stash
+   - ```git
+      #save the current state of the workspace to go back to later: 
+      git stash
+
+
+      #check the current saved states of the workspace
+      git stash list
+
+
+      #get the latest saved workspace stash
+      git stash pop
+
+      
+      #apply a specific stash to the workspace
+      git stash list
+      git stash apply stash@{n}
+     ```
+
+<br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git status
- - ```git
-   git status
-   ```
-   - check which files have been changed / are new
+  - ```git
+      #check which files have been changed / are new:
+      git status
+    ```
 
 
 <br>
@@ -264,20 +290,21 @@
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area.
    - ```git
+      #this command adds all files in the directory to the staging area:
       git add .
-      #this command adds all files in the directory to the staging area.
 
-      #to unstage a file
+      #to unstage a file:
       git reset HEAD file-name
      ```
 <br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files inside the staging area
    - ```git
+      #do a commit
       git commit -m "inital commit"
 
 
-      #to remove a commit
+      #to remove a commit:
       git reset --soft HEAD~1
      ```
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.
@@ -285,15 +312,17 @@
    - <image src="https://docs.github.com/assets/images/help/repository/copy-remote-repository-url-quick-setup.png">
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL
    - ```
+      #to set the new remote URL:
       git remote add origin https://repository.remote.url
-      #to set the new remote URL
+      
+      
+      #to verufy the new remote URL:
       git remote -v 
-      #to verufy the new remote URL 
      ```
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.
    - ```
+      #pushes the commits to the remote repository in the branch named 'main': 
       git push origin main
-      #pushes the commits to the remote repository in the branch named 'main'
      ```
 
 <br>
@@ -309,6 +338,7 @@
          ```
             git fetch origin branch-name
             git diff branch-name
+            
             #after checking, and everythings seems fine, execute pull
             git pull origin branch-name
          ```
@@ -333,3 +363,13 @@
          ```
             git push origin branch-name
          ```
+
+###  &nbsp;&nbsp; c.) Removing files
+   - c.1) remove all untracked files
+      ```
+         git clean -df
+      ```
+   - c.2) clear all unstaged changes
+      ```
+         git checkout -- .
+      ```
