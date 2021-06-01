@@ -17,11 +17,18 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git log](#-git-log)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
-    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files that have been staged in the local repository](#-6-commit-the-files-that-have-been-staged-in-the-local-repository)
+  - [Some UseCase Guides](#some-usecase-guides)
+    - [&nbsp;&nbsp; a.) Creating a local repository](#-a-creating-a-local-repository)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github](#-1-create-a-new-repository-on-github)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo](#-2-choose-a-directory-for-your-repo)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash](#-3-open-git-bash)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Initialize the directory as a git repository](#-4-initialize-the-directory-as-a-git-repository)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area.](#-5-add-files-inside-the-directory-to-the-staging-area)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files inside the staging area](#-6-commit-the-files-inside-the-staging-area)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.](#-7-copy-the-remote-repository-url)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL](#-8-in-the-git-bash-add-the-remote-repository-url)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.](#-9-push-the-changes-to-your-reposirtory)
-  - [Getting the latest updates from the repository](#getting-the-latest-updates-from-the-repository)
+    - [&nbsp;&nbsp; b.) Getting the latest updates from the repository](#-b-getting-the-latest-updates-from-the-repository)
 
 <br>
 <br>
@@ -135,6 +142,7 @@
 
 
 ## Basic Commands
+
 ### &nbsp;&nbsp;&nbsp;&nbsp; git add
    - ```
       git add .
@@ -223,67 +231,104 @@
    ```
    - check which files have been changed / are new
 
+
 <br>
 <br>
 
 
 ## Some UseCase Guides
+
+### &nbsp;&nbsp; a.) Creating a local repository
+
 <br>
 
-### &nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github
-   - <img src="https://docs.github.com/assets/images/help/repository/repo-create.png">
+   - <img src="https://docs.github.com/assets/images/help/repository/repo-create.png"/>
+
+<br>
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo
+
+<br>
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash
+
+<br>
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Initialize the directory as a git repository 
   -  ```git
          git init
       ```
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area
- - ```git
-   git add . 
-   ```
-   - this adds all the files in the directory to the staging area.
-   - to unstage a file
-      ```git
-      git reset HEAD YOUR-FILE
-      ```
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files that have been staged in the local repository
- -  ```git
-      git commit -m "initial commit"
-    ```
-    - to remove the commit
-      ```
-         git reset --soft HEAD`1
-      ```
+      
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area.
+   - ```git
+      git add .
+      #this command adds all files in the directory to the staging area.
+
+      #to unstage a file
+      git reset HEAD file-name
+     ```
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files inside the staging area
+   - ```git
+      git commit -m "inital commit"
+
+
+      #to remove a commit
+      git reset --soft HEAD~1
+     ```
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.
    - at the top of your GitHub repository's Quick setup page, click the the clipboard icon to copy the remote repository URL.
    - <image src="https://docs.github.com/assets/images/help/repository/copy-remote-repository-url-quick-setup.png">
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL
-   ```
+   - ```
       git remote add origin https://repository.remote.url
       #to set the new remote URL
       git remote -v 
       #to verufy the new remote URL 
-   ```
+     ```
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.
-   ```
+   - ```
       git push origin main
       #pushes the commits to the remote repository in the branch named 'main'
-   ```
+     ```
 
 <br>
 <br>
 
-## Getting the latest updates from the repository
- - to straight up get all the changes from the remote repo
-   ```
-      git pull origin branch-name
-   ```
- - to check/compare first, the changes since last pull/commit/update, before executing git pull
-   ```
-      git fetch origin branch-name
-      git diff branch-name
-      #after checking, and everythings seems fine, execute pull
-      git pull origin branch-name
-   ```
+###  &nbsp;&nbsp; b.) Getting the latest updates from the repository
+   - b.1.1 to straight up get all the changes from the remote repo
+      ```
+         git pull origin branch-name
+      ```
+   - b.1.2 to check/compare first, the changes since last pull/commit/update, before executing git pull
+      ```
+         git fetch origin branch-name
+         git diff branch-name
+         #after checking, and everythings seems fine, execute pull
+         git pull origin branch-name
+      ```
+   - b.2 after a merge commit
+      - update main branch in local repository
+         ```
+            git pull origin main
+         ```
+      - update other branches that participated in merge commit
+         ```
+            git pull origin branch-name
+         ```
+      - checkout to the other branch
+         ```
+            git checkout branch-name
+         ```
+      - merge with main
+         ```
+            git merge main
+         ```
+      - push to remote repo
+         ```
+            git push origin branch-name
+         ```
