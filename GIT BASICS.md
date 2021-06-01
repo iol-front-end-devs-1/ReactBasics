@@ -9,11 +9,13 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp; Repository](#-repository)
     - [&nbsp;&nbsp;&nbsp;&nbsp; Staging Area <a href="https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh">source</a>](#-staging-area-source)
     - [&nbsp;&nbsp;&nbsp;&nbsp; Version Control](#-version-control)
+  - [Setting Up the Environment](#setting-up-the-environment)
   - [Basic Commands](#basic-commands)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git add](#-git-add)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git init](#-git-init)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git push](#-git-push)
 
 <br>
 <br>
@@ -27,6 +29,11 @@
 ### &nbsp;&nbsp;&nbsp;&nbsp; Branch
 - a version of a repository
 - a repository can have many branches (eg. master/main, feature, development)
+- why are multiple branches needed?  
+  - Multiple branches are needed to support multiple parallel developments. Refer the image below to see how branches work. <a src="https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/">source</a>
+  - <img alt="branch-image1"  src="https://cdn-media-1.freecodecamp.org/images/sww3mboJ61C4kpLWlQYHnHWvrjX8p--VMui2"/>
+
+
 
 <br>
 
@@ -86,7 +93,17 @@
 <br>
 <br>
 
+## Setting Up the Environment
 
+   
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Basic Commands
 ### &nbsp;&nbsp;&nbsp;&nbsp; git add
@@ -95,6 +112,9 @@
      ```
      - add all changed/new files to staging area
    - ```
+      git add file1 file2 file3
+     ```
+        - add specific files to staging area
       git add filename
      ```
         - add a single file to the staging area
@@ -115,6 +135,9 @@
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git commit
  - ```git
+   git commit -m "commit message"
+   ```
+   - create a snapshot of the project for uploading via git push
    git init
    ```
    - initialize a repository
@@ -131,6 +154,16 @@
 <br>
 <br>
 
+### &nbsp;&nbsp;&nbsp;&nbsp; git log
+ - ```git
+   git log
+   ```
+   - print out all the commits up to the latest
+   - to exit after executing the command, press q
+
+<br>
+<br>
+
 ### &nbsp;&nbsp;&nbsp;&nbsp; git status
  - ```git
    git status
@@ -149,3 +182,11 @@
 <br>
 <br>
 
+### &nbsp;&nbsp;&nbsp;&nbsp; git push
+ - ```git
+   git status
+   ```
+   - check which files have been changed / are new
+
+<br>
+<br>
