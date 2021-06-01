@@ -10,12 +10,18 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp; Staging Area <a href="https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh">source</a>](#-staging-area-source)
     - [&nbsp;&nbsp;&nbsp;&nbsp; Version Control](#-version-control)
   - [Setting Up the Environment](#setting-up-the-environment)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; 1. Install Git](#-1-install-git)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; 2. Setup your username and email](#-2-setup-your-username-and-email)
   - [Basic Commands](#basic-commands)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git add](#-git-add)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git clone](#-git-clone)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; git init](#-git-init)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; git log](#-git-log)
     - [&nbsp;&nbsp;&nbsp;&nbsp; git status](#-git-status)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; git push](#-git-push)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files that have been staged in the local repository](#-6-commit-the-files-that-have-been-staged-in-the-local-repository)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.](#-7-copy-the-remote-repository-url)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL](#-8-in-the-git-bash-add-the-remote-repository-url)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.](#-9-push-the-changes-to-your-reposirtory)
+    - [&nbsp;&nbsp;&nbsp;&nbsp; Getting the latest updates from the repository](#-getting-the-latest-updates-from-the-repository)
 
 <br>
 <br>
@@ -94,8 +100,30 @@
 <br>
 
 ## Setting Up the Environment
+### &nbsp;&nbsp;&nbsp;&nbsp; 1. Install Git
+   - Go to <a href="https://git-scm.com/downloads">Git Downloads Page</a>
+   - Install compatible version
 
-   
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; 2. Setup your username and email
+   - On any directory, right click and select "Git Bash Here"
+   - Input the following commands: 
+      ```git
+         git config --global user.name your-username-here
+      ```
+      - to enter your username
+      ```git
+         git config --global user.name your-email-here
+      ```
+      - to enter your email
+      - to check if the configuration was properly set up: 
+         ```git
+            git config --list
+         ```
+        - then  look  for  user .name  and  user .email
+        - asdfasdfasdf
+
 
 <br>
 <br>
@@ -104,6 +132,7 @@
 <br>
 <br>
 <br>
+
 
 ## Basic Commands
 ### &nbsp;&nbsp;&nbsp;&nbsp; git add
@@ -164,29 +193,97 @@
 <br>
 <br>
 
-### &nbsp;&nbsp;&nbsp;&nbsp; git status
- - ```git
-   git status
-   ```
-   - check which files have been changed / are new
 
-<br>
-<br>
-
-### &nbsp;&nbsp;&nbsp;&nbsp; git status
+### &nbsp;&nbsp;&nbsp;&nbsp; git remote
  - ```git
-   git status
+   git remote add repo-name https://repository.remote.urlHere
    ```
-   - check which files have been changed / are new
+   - sets a new remote url that you can use
+ - ```
+      git remote -v 
+   ```
+   - verifies the remote url 
 
 <br>
 <br>
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; git push
  - ```git
+   git push
+   ```
+   - check which files have been changed / are new
+
+<br>
+<br>
+
+
+### &nbsp;&nbsp;&nbsp;&nbsp; git status
+ - ```git
    git status
    ```
    - check which files have been changed / are new
 
 <br>
 <br>
+
+
+## Some UseCase Guides
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; Creating a local repository
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github
+   - <img src="https://docs.github.com/assets/images/help/repository/repo-create.png">
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Initialize the directory as a git repository 
+  -  ```git
+         git init
+      ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area
+ - ```git
+   git add . 
+   ```
+   - this adds all the files in the directory to the staging area.
+   - to unstage a file
+      ```git
+      git reset HEAD YOUR-FILE
+      ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files that have been staged in the local repository
+ -  ```git
+      git commit -m "initial commit"
+    ```
+    - to remove the commit
+      ```
+         git reset --soft HEAD`1
+      ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.
+   - at the top of your GitHub repository's Quick setup page, click the the clipboard icon to copy the remote repository URL.
+   - <image src="https://docs.github.com/assets/images/help/repository/copy-remote-repository-url-quick-setup.png">
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL
+   ```
+      git remote add origin https://repository.remote.url
+      #to set the new remote URL
+      git remote -v 
+      #to verufy the new remote URL 
+   ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.
+   ```
+      git push origin main
+      #pushes the commits to the remote repository in the branch named 'main'
+   ```
+
+<br>
+<br>
+
+### &nbsp;&nbsp;&nbsp;&nbsp; Getting the latest updates from the repository
+ - to straight up get all the changes from the remote repo
+   ```
+      git pull origin branch-name
+   ```
+ - to check/compare first, the changes since last pull/commit/update, before executing git pull
+   ```
+      git fetch origin branch-name
+      git diff branch-name
+      #after checking, and everythings seems fine, execute pull
+      git pull origin branch-name
+   ```
