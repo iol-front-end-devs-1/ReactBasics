@@ -22,6 +22,8 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Create a new repository on Github](#-1-create-a-new-repository-on-github)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo](#-2-choose-a-directory-for-your-repo)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash](#-3-open-git-bash)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Initialize the directory as a git repository](#-4-initialize-the-directory-as-a-git-repository)
+    - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area](#-5-add-files-inside-the-directory-to-the-staging-area)
 
 <br>
 <br>
@@ -227,5 +229,42 @@
    - <img src="https://docs.github.com/assets/images/help/repository/repo-create.png">
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Choose a directory for your repo
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Open Git Bash
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Initialize the directory as a git repository 
+  -  ```git
+         git init
+      ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Add files, inside the directory, to the staging area
+ - ```git
+   git add . 
+   ```
+   - this adds all the files in the directory to the staging area.
+   - to unstage a file
+      ```git
+      git reset HEAD YOUR-FILE
+      ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Commit the files that have been staged in the local repository
+ -  ```git
+      git commit -m "initial commit"
+    ```
+    - to remove the commit
+      ```
+         git reset --soft HEAD`1
+      ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.
+   - at the top of your GitHub repository's Quick setup page, click the the clipboard icon to copy the remote repository URL.
+   - <image src="https://docs.github.com/assets/images/help/repository/copy-remote-repository-url-quick-setup.png">
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL
+   ```
+      git remote add origin https://repository.remote.url
+      #to set the new remote URL
+      git remote -v 
+      #to verufy the new remote URL 
+   ```
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.
+   ```
+      git push origin main
+      #pushes the commits to the remote repository in the branch named 'main'
+   ```
+
 
 
