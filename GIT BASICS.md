@@ -21,7 +21,7 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Copy the remote repository URL.](#-7-copy-the-remote-repository-url)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL](#-8-in-the-git-bash-add-the-remote-repository-url)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.](#-9-push-the-changes-to-your-reposirtory)
-    - [&nbsp;&nbsp;&nbsp;&nbsp; Getting the latest updates from the repository](#-getting-the-latest-updates-from-the-repository)
+  - [Getting the latest updates from the repository](#getting-the-latest-updates-from-the-repository)
 
 <br>
 <br>
@@ -275,7 +275,7 @@
 <br>
 <br>
 
-### &nbsp;&nbsp;&nbsp;&nbsp; Getting the latest updates from the repository
+## Getting the latest updates from the repository
  - to straight up get all the changes from the remote repo
    ```
       git pull origin branch-name
