@@ -37,6 +37,7 @@
     - [&nbsp;&nbsp; b.) Getting the latest updates from the repository](#-b-getting-the-latest-updates-from-the-repository)
     - [&nbsp;&nbsp; c.) "Removing" files](#-c-removing-files)
     - [&nbsp;&nbsp; d.) Warning: LF will be replaced...](#-d-warning-lf-will-be-replaced)
+    - [&nbsp;&nbsp; e.) Get latest changes from the main while working on a branch](#-e-get-latest-changes-from-the-main-while-working-on-a-branch)
 
 <br>
 <br>
@@ -395,3 +396,42 @@
          git config --global core.autocrlf true
          git config --global core.safecrlf false
       ```
+
+###  &nbsp;&nbsp; e.) Get latest changes from the main while working on a branch
+ - ``` 
+      #switch to main branch: 
+      git checkout main
+
+
+      #get the latest from main branch: 
+      git pull origin main
+
+
+      #go back to branch you were working on:
+      git checkout branch-name
+
+
+      #save the chanes that you have made:
+      git stash
+
+
+      #update the branch:
+      git pull origin branch-name
+
+
+      #merge this branch with the main branch:
+      git merge main
+
+
+      #push this branch to remote repo:
+      git push origin branch-name
+
+
+      #get list of saved stash: 
+      git stash
+
+
+      #find the stash you want to apply:
+      git stash apply stash@{0}
+      
+   ```
