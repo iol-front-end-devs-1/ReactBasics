@@ -35,7 +35,8 @@
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. In the git bash, add the remote repository URL](#-8-in-the-git-bash-add-the-remote-repository-url)
     - [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9. Push the changes to your reposirtory.](#-9-push-the-changes-to-your-reposirtory)
     - [&nbsp;&nbsp; b.) Getting the latest updates from the repository](#-b-getting-the-latest-updates-from-the-repository)
-    - [&nbsp;&nbsp; c.) Removing files](#-c-removing-files)
+    - [&nbsp;&nbsp; c.) "Removing" files](#-c-removing-files)
+    - [&nbsp;&nbsp; d.) Warning: LF will be replaced...](#-d-warning-lf-will-be-replaced)
 
 <br>
 <br>
@@ -338,7 +339,11 @@
          ```
             git fetch origin branch-name
             git diff branch-name
-            
+
+
+            ===============================
+
+
             #after checking, and everythings seems fine, execute pull
             git pull origin branch-name
          ```
@@ -364,12 +369,29 @@
             git push origin branch-name
          ```
 
-###  &nbsp;&nbsp; c.) Removing files
-   - c.1) remove all untracked files
+###  &nbsp;&nbsp; c.) "Removing" files
+
+   - 
       ```
+         #to remove all untracked files:
          git clean -df
-      ```
-   - c.2) clear all unstaged changes
-      ```
+
+         ===============================
+
+         #to clear all unstaged changes: 
          git checkout -- .
+
+
+         ===============================
+
+
+         #to clear the staging area : 
+         git reset HEAD --
+      ```
+
+###  &nbsp;&nbsp; d.) Warning: LF will be replaced...
+   - d.1) If this happens, try: 
+      ```
+         git config --global core.autocrlf true
+         git config --global core.safecrlf false
       ```
